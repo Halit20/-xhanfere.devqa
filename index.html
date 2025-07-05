@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xhanfere - Portfolio</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display & Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Paletë ngjyrash e re: e butë, femërore, elegante */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FFFBF5; /* Ngjyrë kremi e lehtë */
+            color: #5C5454; /* Ngjyrë kafe e errët e butë */
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+            color: #4A4040;
+        }
+        .nav-link {
+            @apply text-gray-600 hover:text-rose-500 transition-colors duration-300;
+        }
+        .section-title {
+            @apply text-4xl md:text-5xl font-medium text-center mb-12;
+        }
+        .gallery-img {
+            @apply w-full h-full object-cover rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105;
+        }
+        .btn-primary {
+            @apply bg-rose-400 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-500 transition-colors duration-300 tracking-wider;
+        }
+        
+        /* Stilet për animacionin gjatë lëvizjes (scroll) */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-rose-100">
+        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-3xl font-serif font-medium">Xhanfere</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link">Kreu</a>
+                <a href="#about" class="nav-link">Rreth Meje</a>
+                <a href="#gallery" class="nav-link">Galeria</a>
+                <a href="#contact" class="nav-link">Kontakt</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-feather="menu" class="w-7 h-7"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 nav-link">Kreu</a>
+            <a href="#about" class="block py-2 nav-link">Rreth Meje</a>
+            <a href="#gallery" class="block py-2 nav-link">Galeria</a>
+            <a href="#contact" class="block py-2 nav-link">Kontakt</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 text-center md:text-left animate-on-scroll">
+                <h1 class="text-5xl md:text-7xl font-medium leading-tight mb-4">Krijimi i Bukurisë Dixhitale</h1>
+                <p class="text-lg text-gray-600 mb-8">Përshëndetje, unë jam Xhanfere. Mirë se vini në hapësirën time kreative, ku dizajni dhe teknologjia takohen.</p>
+                <a href="#gallery" class="btn-primary">Eksploro Galerine</a>
+            </div>
+            <div class="md:w-1/2 animate-on-scroll" style="transition-delay: 200ms;">
+                <img src="https://storage.googleapis.com/gemini-prod-us-west1-1p-4050/files/image_b07dfa.jpg" alt="Fotoja e profilit të Xhanferes" class="rounded-lg shadow-2xl w-full max-w-md mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x700/e0e0e0/333333?text=Xhanfere';">
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-rose-50/50">
+            <div class="container mx-auto px-6 text-center max-w-3xl animate-on-scroll">
+                <h2 class="section-title">Historia Ime</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                    Udhëtimi im në botën dixhitale nuk filloi si një plan i mirëmenduar, por si një kuriozitet i natyrshëm. Që në fëmijëri, më tërhiqte mënyra se si ngjyrat, format dhe fjalët mund të kombinoheshin për të treguar një histori. Këtë pasion e gjeta fillimisht tek skicat e modës dhe më vonë tek dizajni grafik.
+                </p>
+                 <p class="text-lg leading-relaxed">
+                    Sot, e kam shndërruar atë kuriozitet në profesionin tim. Përpiqem të ndërtoj ura midis ideve dhe realitetit dixhital, duke krijuar uebfaqe dhe përvoja që janë jo vetëm estetikisht të bukura, por edhe intuitive dhe njerëzore. Çdo projekt është një mundësi për të mësuar diçka të re dhe për të lënë një gjurmë të vogël pozitive në botën online.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Inspiration Section -->
+        <section id="inspiration" class="py-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 animate-on-scroll">
+                    <img src="https://i.pinimg.com/564x/a0/43/33/a04333f4135a51e60473a42617a2622e.jpg" alt="Imazh frymëzimi" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 text-left animate-on-scroll" style="transition-delay: 200ms;">
+                    <h2 class="text-4xl md:text-5xl font-serif font-medium mb-6">Filozofia Ime</h2>
+                    <p class="text-lg leading-relaxed">
+                        Besoj në fuqinë e thjeshtësisë. Frymëzimi im vjen nga bota përreth: nga loja e dritës në një mëngjes të qetë, nga teksturat e materialeve natyrore dhe nga eleganca e një dizajni minimalist. Për mua, bukuria qëndron në detajet e menduara mirë dhe në heqjen e gjithçkaje të tepërt për të zbuluar thelbin. Kjo është filozofia që ndjek në çdo gjë që krijoj.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-rose-50/50">
+            <div class="container mx-auto px-6 animate-on-scroll">
+                <h2 class="section-title">Galeria</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    <!-- Kolona 1 -->
+                    <div class="grid gap-4 md:gap-6">
+                        <img class="gallery-img" src="de1.jpg" alt="Imazh galerie 1" onerror="this.onerror=null;this.src='https://placehold.co/500x700/f5f5f5/cccccc?text=Imazhi+1';">
+                        <img class="gallery-img" src="de2.jpg" alt="Imazh galerie 2" onerror="this.onerror=null;this.src='https://placehold.co/500x600/f5f5f5/cccccc?text=Imazhi+2';">
+                        <img class="gallery-img" src="de3.jpg" alt="Imazh galerie 3" onerror="this.onerror=null;this.src='https://placehold.co/500x800/f5f5f5/cccccc?text=Imazhi+3';">
+                        <img class="gallery-img" src="de4.jpg" alt="Imazh galerie 4" onerror="this.onerror=null;this.src='https://placehold.co/500x700/f5f5f5/cccccc?text=Imazhi+4';">
+                    </div>
+                    <!-- Kolona 2 -->
+                    <div class="grid gap-4 md:gap-6">
+                        <img class="gallery-img" src="de5.jpg" alt="Imazh galerie 5" onerror="this.onerror=null;this.src='https://placehold.co/500x800/f5f5f5/cccccc?text=Imazhi+5';">
+                        <img class="gallery-img" src="de6.jpg" alt="Imazh galerie 6" onerror="this.onerror=null;this.src='https://placehold.co/500x700/f5f5f5/cccccc?text=Imazhi+6';">
+                        <img class="gallery-img" src="de7.jpg" alt="Imazh galerie 7" onerror="this.onerror=null;this.src='https://placehold.co/500x600/f5f5f5/cccccc?text=Imazhi+7';">
+                    </div>
+                    <!-- Kolona 3 -->
+                    <div class="grid gap-4 md:gap-6">
+                        <img class="gallery-img" src="de8.jpg" alt="Imazh galerie 8" onerror="this.onerror=null;this.src='https://placehold.co/500x600/f5f5f5/cccccc?text=Imazhi+8';">
+                        <img class="gallery-img" src="de9.jpg" alt="Imazh galerie 9" onerror="this.onerror=null;this.src='https://placehold.co/500x800/f5f5f5/cccccc?text=Imazhi+9';">
+                        <img class="gallery-img" src="de10.jpg" alt="Imazh galerie 10" onerror="this.onerror=null;this.src='https://placehold.co/500x700/f5f5f5/cccccc?text=Imazhi+10';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center max-w-lg animate-on-scroll">
+                <h2 class="section-title">Le të krijojmë diçka së bashku</h2>
+                <p class="text-lg mb-8">Keni një ide apo projekt? Dëshironi të bashkëpunojmë? Më shkruani një mesazh.</p>
+                <div class="flex justify-center space-x-6 mb-10">
+                    <a href="https://www.instagram.com/p/DLvRNmFN-6id5FsCztJoOskmegyKinLNeA41GM0/?img_index=1" target="_blank" class="text-gray-500 hover:text-rose-500">
+                        <i data-feather="instagram" class="w-7 h-7"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/xhan206/" target="_blank" class="text-gray-500 hover:text-rose-500">
+                        <i data-feather="pinterest" class="w-7 h-7"></i>
+                    </a>
+                    <a href="mailto:emaili-juaj@example.com" class="text-gray-500 hover:text-rose-500">
+                        <i data-feather="mail" class="w-7 h-7"></i>
+                    </a>
+                </div>
+                 <a href="mailto:emaili-juaj@example.com" class="btn-primary text-lg">Dërgo Email</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 border-t border-rose-100">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Xhanfere. Dizajnuar me pasion.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Feather Icons initialization
+        feather.replace();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animacion gjatë lëvizjes (scroll)
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Elementi do të animohet kur 10% e tij është e dukshme
+        });
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
